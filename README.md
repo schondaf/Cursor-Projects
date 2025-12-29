@@ -1,4 +1,4 @@
-# 🚀 Crypto Market Update Reporter
+# 🚀 Daily Market Recap Generator
 
 A comprehensive Python script that generates professional LinkedIn-style market reports by combining cryptocurrency data, Treasury yields, and FRED interest rates to analyze the relationship between traditional finance and digital assets.
 
@@ -7,6 +7,7 @@ A comprehensive Python script that generates professional LinkedIn-style market 
 - **Real-time Cryptocurrency Data**: Fetches current prices and 24h changes for BTC, ETH, and XRP
 - **Treasury Yield Analysis**: Gets 10-year Treasury yield data from Alpha Vantage
 - **FRED Interest Rates**: Retrieves short-term rates (Fed Funds, 3-Month T-Bill, 2-Year Treasury)
+- **AI-Powered Market Analysis**: Optional Claude API integration for enhanced insights and professional commentary
 - **Market Correlation Analysis**: Links crypto performance with traditional finance indicators
 - **Professional Report Format**: Generates LinkedIn-ready market summaries with emojis and hashtags
 - **Automatic File Saving**: Saves reports with timestamps for easy reference
@@ -27,6 +28,16 @@ A comprehensive Python script that generates professional LinkedIn-style market 
 - **Cost**: Free tier available (500 requests/day)
 - **Note**: Required for Treasury yield functionality
 
+### Claude API Key (Optional but Recommended)
+- **Purpose**: Generate enhanced AI-powered market analysis and insights
+- **Get it here**: [Anthropic Console](https://console.anthropic.com/)
+- **Cost**: Pay-as-you-go pricing (very affordable for daily use)
+- **Note**: The script works without this API key, but analysis will be more basic
+- **Benefits**: 
+  - Deeper market correlation insights
+  - Professional financial commentary
+  - Context-aware analysis of market dynamics
+
 ### FRED API (Optional)
 - **Purpose**: Fetch Federal Reserve interest rate data
 - **Get it here**: [FRED API](https://fred.stlouisfed.org/docs/api/api_key.html)
@@ -37,25 +48,29 @@ A comprehensive Python script that generates professional LinkedIn-style market 
 
 ### Basic Usage
 ```bash
-python crypto_update.py
+python daily_market_recap.py
 ```
 
 ### What Happens When You Run It
-1. **API Key Prompt**: Enter your Alpha Vantage API key when prompted
+1. **API Key Prompts**: 
+   - Enter your Alpha Vantage API key (required)
+   - Optionally enter your Claude API key for enhanced analysis
 2. **Data Fetching**: The script fetches data from multiple sources:
    - CoinGecko (cryptocurrency prices)
    - Alpha Vantage (Treasury yields)
    - FRED (interest rates)
-3. **Analysis Generation**: Creates a comprehensive market report
-4. **Report Display**: Shows the complete report in the terminal
-5. **File Saving**: Automatically saves the report to a timestamped file
+3. **Analysis Generation**: 
+   - If Claude API key provided: Generates AI-powered market analysis
+   - Otherwise: Uses standard rule-based analysis
+4. **Recap Display**: Shows the complete recap in the terminal
+5. **File Saving**: Automatically saves the recap to a timestamped file
 
 ## 📊 Sample Output
 
-The script generates reports like this:
+The script generates recaps like this:
 
 ```
-🚀 CRYPTO MARKET UPDATE - December 15, 2024 🚀
+🚀 DAILY MARKET RECAP - December 15, 2024 🚀
 
 📈 CRYPTOCURRENCY PERFORMANCE (24h):
 🟢 BTC: $43,250.00 (+2.45%)
@@ -77,13 +92,13 @@ The script generates reports like this:
 🌊 Risk Appetite: High
 💡 Key Takeaway: Risk-on environment favors crypto
 
-#Crypto #Markets #Treasury #Finance #DigitalAssets #TradFi #DeFi
+#Crypto #Markets #Treasury #Finance #DigitalAssets #TradFi #DeFi #MarketRecap
 ```
 
 ## 🔧 Customization
 
 ### Adding More Cryptocurrencies
-Edit the `crypto_ids` dictionary in the `CryptoMarketReporter` class:
+Edit the `crypto_ids` dictionary in the `DailyMarketRecapGenerator` class:
 
 ```python
 self.crypto_ids = {
@@ -111,10 +126,10 @@ self.fred_series = {
 ## 📁 File Structure
 
 ```
-├── crypto_update.py          # Main script
-├── requirements.txt          # Python dependencies
-├── README.md                # This file
-└── crypto_market_report_YYYYMMDD_HHMMSS.txt  # Generated reports
+├── daily_market_recap.py       # Main script
+├── requirements.txt             # Python dependencies
+├── README.md                   # This file
+└── market_recap_YYYYMMDD_HHMMSS.txt  # Generated recaps
 ```
 
 ## 🚨 Troubleshooting
@@ -147,10 +162,11 @@ self.fred_series = {
 ## 💡 Tips for LinkedIn Sharing
 
 1. **Run the script daily** at market close (4 PM ET) for fresh data
-2. **Customize the analysis** section based on your market insights
-3. **Add personal commentary** before sharing
-4. **Use the generated hashtags** for better reach
-5. **Save reports** for historical analysis and trend tracking
+2. **Post in the morning** (8-9 AM ET) for better engagement
+3. **Customize the analysis** section based on your market insights
+4. **Add personal commentary** before sharing
+5. **Use the generated hashtags** for better reach
+6. **Save recaps** for historical analysis and trend tracking
 
 ## 🔮 Future Enhancements
 
@@ -159,7 +175,7 @@ Potential improvements for future versions:
 - More sophisticated correlation analysis
 - Additional traditional finance indicators
 - Export to Excel/CSV formats
-- Email automation for daily reports
+- Email automation for daily recaps
 - Web dashboard interface
 
 ## 📞 Support
